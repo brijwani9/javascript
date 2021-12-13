@@ -2,11 +2,28 @@
 
 <html>
 
+<head>
+    <link href="dom-access.css" rel="stylesheet">
+</head>
+
 <body>
     <div class="message">This is header 3 class message.</div>
     <div id="message">This is header 3 id message.</div>
+    <div>
+        <input class="inputText" type="text" />
+    </div>
+    <div>
+        <input class="show_alert_button" type="button" value="Show alert" />
+    </div>
+    <div>
+        <div id="button_click_text" style="background-color: red;">Button is not yet clicked</div>
+    </div>
 
-    <input class="inputText" type="text" />
+    <div class="final_message final_message_red_class">
+        This is final message after button click.
+    </div>
+
+    <div class="key_press_message"></div>
     <script src="dom-access.js"></script>
 </body>
 
