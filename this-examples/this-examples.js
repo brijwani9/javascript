@@ -45,3 +45,22 @@ const otherPerson = {
 // So here this will hold value age only and not birthYear and name.
 otherPerson.printDetails = person.printDetails;
 otherPerson.printDetails();
+
+
+// this keyword in arrow function inside an object
+const jsClass = {
+    year: 2020,
+    batch: 2,
+
+    normalFunction: function () {
+        // Here this will be actual object
+        console.log("This inside normal function inside an object: ", this);
+    },
+
+    // Here this keyword is global scope. So basically here this keyword will be window object.
+    // Any arrow function will be defined in global scope only.
+    arrowFunction: () => console.log("This inside arrow function inside an object: ", this)
+}
+
+jsClass.normalFunction();
+jsClass.arrowFunction();
