@@ -25,3 +25,18 @@ console.log(friends.pop());
 
 //Shift: Removed and returns the first element of an array
 console.log(friends.shift());
+
+// Destructuring array
+const arr = [1, 2, 3];
+const [a, b, c] = arr;
+console.log(a, b, c); // It will print 1 2 3
+
+// Skipping aray element while destructuring
+const [p, , q] = arr;
+console.log(p, q); // It will print 1 3
+
+
+//Setting default values while destructuring arrays.
+const newArray = [10, 20];
+const [age1 = 10, age2 = 10, age3 = 30] = newArray;
+console.log(age1, age2, age3); // It will print 10 20 10
