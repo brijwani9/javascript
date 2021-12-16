@@ -40,3 +40,32 @@ console.log(p, q); // It will print 1 3
 const newArray = [10, 20];
 const [age1 = 10, age2 = 10, age3 = 30] = newArray;
 console.log(age1, age2, age3); // It will print 10 20 10
+
+// slice function
+// This will actually change the array
+const exampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(exampleArray.slice(-1)); // 10
+console.log(exampleArray.slice(8)); // [9, 10]
+console.log(exampleArray.slice(6, 8)); // [7, 8]
+console.log(exampleArray.reverse()); // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+console.log(exampleArray.at(-1)); // 1
+
+
+const ar1 = [1, 2, 3];
+const ar2 = [4, 5, 6];
+console.log(ar1.concat(ar2)); // [1, 2, 3, 4, 5, 6]
+
+// Loopng on array
+
+// In foreach we can not use break.
+exampleArray.forEach(element => {
+    console.log(element);
+});
+
+for (const value of exampleArray) {
+    console.log(value);
+}
+
+for (const entry of exampleArray.entries()) {
+    console.log(entry);
+}
