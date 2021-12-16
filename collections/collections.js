@@ -60,11 +60,7 @@ console.log(mapValues.keys()); // This will print
 0: 2
 1: 3
 2: 4
-3:
-    value: {
-        name: 'Brij',
-        age: 32
-    }
+3: value: {name: 'Brij', age: 32}
  */
 
 // Get all values of map
@@ -76,3 +72,12 @@ console.log(mapValues.values());
 2: "Number four"
 3: "This is brijesh entry"
  */
+
+
+// If we modify third parameter then actual mapValues will be modified.
+// For set key and value will be the same.
+mapValues.forEach((value, key, map) => {
+    console.log(`Deleting Key: ${key} & Value: ${value} pair.`)
+    map.delete(key);
+});
+console.log(mapValues.size); // 0
