@@ -69,3 +69,35 @@ for (const value of exampleArray) {
 for (const entry of exampleArray.entries()) {
     console.log(entry);
 }
+
+
+
+// Reduce function
+const sumArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sum = sumArray.reduce((total, value, index, originalArray) => {
+    return total += value;
+}, 0);
+console.log("Sum of first 10 elements: " + sum); // Sum of first 10 elements: 55
+
+// find method
+const foundValue = sumArray.find((val) => {
+    console.log("Find called"); // It will be called till the first element matches.
+    return val < 2;
+});
+console.log("Found value = " + foundValue); // 1
+
+// map method
+const doubledValueArray = sumArray.map((val) => val * 2);
+console.log("Doubled array: " + doubledValueArray); // 2,4,6,8,10,12,14,16,18,20
+
+// findIndex
+const indexOfTwo = sumArray.findIndex((val) => val == 2);
+console.log("indexOfTwo: " + indexOfTwo); // 1
+
+// some method
+// This is same like includes except that we can add some condition instead fo exact euality.
+console.log(sumArray.some(val => val > 9)); // true
+
+// every method
+console.log(sumArray.every(val => val > 0)); // true
+console.log(sumArray.every(val => val > 9)); // false
