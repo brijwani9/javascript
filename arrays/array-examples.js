@@ -101,3 +101,51 @@ console.log(sumArray.some(val => val > 9)); // true
 // every method
 console.log(sumArray.every(val => val > 0)); // true
 console.log(sumArray.every(val => val > 9)); // false
+
+// flat method
+const nestedArray = [
+    [1, 2, 3, [100, 200, 300]],
+    [4, 5, 6], 7, 8, [20, 30]
+];
+console.log(nestedArray.flat()); //  [1, 2, 3, Array(3), 4, 5, 6, 7, 8, 20, 30]
+console.log(nestedArray.flat(2)); // [1, 2, 3, 100, 200, 300, 4, 5, 6, 7, 8, 20, 30]
+
+// flatMap method
+const employee = {
+    name: 'A',
+    leaves: ['1 Dec 2021', '2 Dec 2021']
+}
+const empArray = [employee];
+empArray.flatMap(emp => emp.leaves).forEach(val => console.log(val));
+// 1 Dec 2021
+// 2 Dec 2021
+// flatMap method can not take depth parameter as flat method.
+
+// Sort
+// This method will mutate original array
+// Sort always works on strings by default. So basically if we try to sort number array,
+// then sort methd will by default convert it to string and then sorts.
+const sortArray = [-1, 20, -30, 34, -78];
+console.log(sortArray.sort()); // [-1, -30, -78, 20, 34]
+// This is because sort converts anything to string and then sorts. 
+// We can make this work properly as below,
+console.log(sortArray.sort((a, b) => {
+    if (a > b) return 1;
+    if (a < b) return -1;
+    if (a === b) return 0;
+})); // [-78, -30, -1, 20, 34]
+
+// Array constructor behaviour
+const arConst1 = new Array(1, 2, 3, 4, 5);
+console.log(arConst1); // [1, 2, 3, 4, 5]
+// But if we create na array with single value in constructor
+const arConst2 = new Array(5);
+console.log(arConst2); // [empty × 5]
+// This creates array with length 5 and all elements will be empty
+
+
+// from method
+const fromArray = Array.from({
+    length: 2
+}, () => 1);
+console.log(fromArray); // [1, 1]
