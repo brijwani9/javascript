@@ -67,3 +67,17 @@ document.body.after(deleteExample);
 setTimeout(() => {
     deleteExample.remove();
 }, 3000);
+
+
+// Accessing all child nodes of some element
+const element = document.querySelector('.message');
+// Access parent and child nodes of some element.
+element.childNodes;
+element.parentElement;
+
+element.firstElementChild;
+element.lastElementChild;
+
+// Accessing sideways.
+element.previousElementSibling;
+element.nextElementSibling;
